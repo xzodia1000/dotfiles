@@ -1,0 +1,97 @@
+[colors]
+foreground = #b5b4c9
+background = #1c1c1c
+urgent     = #76a065
+focused    = #a18daf
+faded      = #aaaaaa
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/bar]
+width               = 66%
+height              = 41
+offset-x            = 16%
+offset-y            = 25
+fixed-center        = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+padding-left        = 5
+padding-right       = 5
+module-margin-left  = 5
+module-margin-right = 5
+font-0              = CozetteVector:pixelsize=10;2
+font-1              = Siji:pixelsize=8;2
+modules-left        = title
+modules-center      = bspwm
+modules-right       = battery time
+override-redirect   = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/bspwm]
+type                    = internal/bspwm
+enable-layout-click     = false
+format                  = <label-tags> <label-layout>
+format-font             = 2
+label-focused           = 
+label-unfocused         = 
+label-urgent            = 
+label-visible           = 
+label-empty             = 
+label-focused-padding   = 1
+label-unfocused-padding = 1
+label-urgent-padding    = 1
+label-visible-padding   = 1
+label-empty-padding     = 1
+label-focused-foreground = ${colors.focused}
+label-unfocused-foreground = ${colors.faded}
+label-urgent-foreground = ${colors.urgent}
+label-visible-foreground = ${colors.faded}
+label-empty-foreground = ${colors.faded}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/time]
+type                     = internal/date
+interval                 = 25.0
+date                     = %H:%M
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/title]
+type = internal/xwindow
+label-maxlen = 150
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[settings]
+screenchange-reload = true
