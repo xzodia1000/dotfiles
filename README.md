@@ -11,8 +11,6 @@ The dotfiles for my Linux setup
 - Text Editor: [Neovim](https://neovim.io)
 - File Manager: [Vifm](https://vifm.info/)
 
-***Note:** This setup is inspired from [cubetastic33](https://github.com/cubetastic33)'s [dotfiles repo](https://github.com/cubetastic33/dotfiles).*
-
 ## Screenshots
 
 ![img1](./screenshots/1.png)
